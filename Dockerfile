@@ -7,6 +7,6 @@ COPY . /usr/src/app/
 RUN pip install --no-cache-dir -r requirements.txt
 
 EXPOSE 9090 9190
-USER uwsgi
+USER docker
 
-CMD ["/cmd.sh"]
+CMD ["cmd.sh"]
