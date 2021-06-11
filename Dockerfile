@@ -7,6 +7,5 @@ COPY . /usr/src/app/
 RUN pip install --no-cache-dir -r requirements.txt
 
 EXPOSE 8080
-USER docker
 
 CMD ["python","app.py"]
