@@ -50,6 +50,6 @@ def create():
 
 
 if __name__ == "__main__":
-    website_url = 'uadshop.com:5000'
-    app.config['SERVER_NAME'] = website_url
-    app.run(debug=True)
+    # website_url = 'uadshop.com:5000'
+    # app.config['SERVER_NAME'] = website_url
+    app.run(host="0.0.0.0",debug=True)
