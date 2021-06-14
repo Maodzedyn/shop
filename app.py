@@ -3,6 +3,7 @@ from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///shop.db'
+# app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:root@172.17.0.2:3306/shopDB'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
@@ -17,7 +18,6 @@ class Item(db.Model):
 
 def __repr__(self):
     self.title
-
 
 @app.route('/')
 def index():
@@ -50,4 +50,6 @@ def create():
 
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0",debug=True)
+    website_url = 'vibhu.gfg:5000'
+    app.config['SERVER_NAME'] = website_url
+    app.run(debug=True)
